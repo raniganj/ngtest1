@@ -5,3 +5,7 @@ export function sum1() {
 export function sum2(n1: number, n2: number) {
   return n1 + n2;
 }
+
+export async function sum3(n1: number, n2: number) {
+  return n1 + n2;
+}
