@@ -1,4 +1,4 @@
-import { sum1, sum2, sum3 } from './sum';
+import { obs_sum, sum1, sum2, sum3 } from './sum';
 
 describe('Testing Sum suite', () => {
   it('test method sum1', () => {
@@ -34,5 +34,19 @@ describe('Testing Sum suite', () => {
     let result = sum3(1, 2);
     await expectAsync(result).toBeResolved();
     await expectAsync(result).toBeResolvedTo(3);
+  });
+
+  it('test async sum with resolve', (resolve) => {
+    sum3(1, 2).then((data) => {
+      expect(data).toEqual(3);
+      resolve();
+    });
+  });
+
+  it('test sum method with Observable', (resolve) => {
+    obs_sum(1, 2).subscribe((res) => {
+      expect(res).toBe(3);
+      resolve();
+    });
   });
 });
