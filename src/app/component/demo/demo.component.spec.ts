@@ -8,7 +8,7 @@ describe('DemoComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DemoComponent]
+      declarations: [DemoComponent],
     });
     fixture = TestBed.createComponent(DemoComponent);
     component = fixture.componentInstance;
@@ -17,5 +17,7 @@ describe('DemoComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+    expect(component.counter).toBe(10);
+    expect(component.title).toBe('Hello Demo');
   });
 });
